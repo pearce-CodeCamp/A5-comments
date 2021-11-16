@@ -39,6 +39,7 @@ window.addEventListener("load", function () {
         // HTML element and its value!!!
         // this is where we will invoke our formSubmission function
         // eventually
+
     });
 
 });
