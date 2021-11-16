@@ -1,6 +1,7 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
+// we don't need to worry about implementing this function
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     // Here is the HTML formatting for our mission target div.
     /*
@@ -16,6 +17,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     */
 }
 
+// let's forget about this function, we don't need to implement it
 function validateInput(testInput) {
 
 }
@@ -68,14 +70,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     */
 }
 
+// this has been implemented for us
 async function myFetch() {
     let planetsReturned;
-
-    planetsReturned = await fetch().then(function (response) {
+    // this function executes the fetch to our planets url
+    // then it returns the json array we get as a Promise
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
+        return response.json();
     });
 
     return planetsReturned;
 }
+
+// Implement the pick planet function
+// it takes a array of planet objects
+// creates a random index, and uses that index to select
+// a random element from the inputted planets array
+// Link to randomly select an element from an array in book:
+// https://education.launchcode.org/intro-to-professional-web-dev/chapters/objects-and-math/math-applications.html#random-selection-from-an-array
 
 function pickPlanet(planets) {
 }

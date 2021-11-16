@@ -1,17 +1,46 @@
 // Write your JavaScript code here!
+// make sure you delete any imports of any scripHelper functions
+// if you are getting an indentifier 'functionName' has already declared error,
+// you probably have an import statement at the top of this file 
+// that you need to delete
 
 window.addEventListener("load", function () {
 
-    // let listedPlanets;
-    // // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    // let listedPlanetsResponse;
-    // listedPlanetsResponse.then(function (result) {
-    //     listedPlanets = result;
-    //     console.log(listedPlanets);
-    // }).then(function () {
-    //     console.log(listedPlanets);
-    //     // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-    // })
+    let listedPlanets;
+    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+    let listedPlanetsResponse = myFetch();
+    listedPlanetsResponse.then(function (result) {
+        listedPlanets = result;
+        console.log(listedPlanets);
+    }).then(function () {
+        console.log(listedPlanets);
+        // based on these console statements, we now know that listedPlanets
+        // is our arrray of fetched planet json
+        // we now have access to our fetched planets, so we need to select a random
+        // planet from the list with our pickPlanet function, then update the text of our 
+        // missionTarget div from index.html to display data about this random planet
+
+        // Below this comment call the appropriate helper function to pick a planet 
+        // fom the list of planets and add that information to your destination.
+        // invoke pickPlanet and pass it our list of planets and store that in a 
+        // variable
+
+        // we can then use that randomly selected planet object to fill in our template
+        // all planet objects have the properties: name, star, diameter, distance, 
+        // image, moons
+        // so we can simply access these properties in our template and then add
+        // this template literal in to the missionTarget div using the same idea
+        // we did for updating things like the pilotStatus and copilotStatus
+        /*`<h2>Mission Destination</h2>
+        <ol>
+            <li>Name: ${}</li>
+            <li>Diameter: ${}</li>
+            <li>Star: ${}</li>
+            <li>Distance from Earth: ${}</li>
+            <li>Number of Moons: ${}</li>
+        </ol>
+        <img src="${}">`*/
+    })
     // On Adding Validation
     // first, we are already inside a window load event listener!
     // before we even worry about validating the form inputs, we need to
